@@ -1,4 +1,4 @@
-﻿namespace IDEA
+﻿namespace Encryption.IDEA
 {
     partial class IdeaForm
     {

@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
 
-namespace RSA
+namespace Encryption.RSA
 {
     public class Operate
     {
+        /// <summary>
+        /// RSA加密方法
+        /// </summary>
+        /// <param name="Source">待加密文本</param>
+        /// <returns>返回一个长度为3的数组：｛密文，公钥，私钥｝</returns>
         public static string[] Encrypt(string Source)
         {
             if (String.IsNullOrEmpty(Source))
@@ -50,6 +52,12 @@ namespace RSA
             return new string[] { Plain, PublicKey, PrivateKey };
         }
 
+        /// <summary>
+        /// RSA解密方法
+        /// </summary>
+        /// <param name="Source">密文</param>
+        /// <param name="PrivateKey">私钥</param>
+        /// <returns>明文</returns>
         public static string Decrypt(string Source, string PrivateKey)
         {
             if (String.IsNullOrEmpty(Source))

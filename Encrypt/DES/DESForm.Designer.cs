@@ -1,4 +1,4 @@
-﻿namespace DES
+﻿namespace Encryption.DES
 {
     partial class DESForm
     {

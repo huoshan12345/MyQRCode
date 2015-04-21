@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
-using System.Security.Cryptography;
 
-namespace TripleDES
+namespace Encryption._3DES
 {
     public class Operate
     {

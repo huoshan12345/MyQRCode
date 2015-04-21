@@ -1,14 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.IO;
-using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
-namespace RSA
+namespace Encryption.RSA
 {
     public partial class RSAForm : Form
     {

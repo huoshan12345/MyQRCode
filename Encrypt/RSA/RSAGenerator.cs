@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-
-namespace RSA
+namespace Encryption.RSA
 {
-    class DESManager
+    internal class DESManager
     {
         private static readonly byte[] iv = { 59, 76, 55, 186, 78, 4, 217, 32 };
         private static readonly byte[] key = { 155, 101, 246, 179, 46, 96, 56, 39 };
@@ -43,7 +41,7 @@ namespace RSA
     }
 
     //下面开始RSA处理-方法：
-    class RSAGenerator
+    internal class RSAGenerator
     {
         private RSACryptoServiceProvider RSACSP;
         //构造函数

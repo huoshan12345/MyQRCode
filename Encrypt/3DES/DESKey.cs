@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
-namespace TripleDES
+namespace Encryption._3DES
 {
     class DESKey
     {

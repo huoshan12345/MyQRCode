@@ -1,4 +1,4 @@
-﻿namespace TripleDES
+﻿namespace Encryption._3DES
 {
     partial class TripleDESForm
     {

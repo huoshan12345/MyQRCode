@@ -1,4 +1,4 @@
-﻿namespace AES
+﻿namespace Encryption.AES
 {
     partial class AESForm
     {

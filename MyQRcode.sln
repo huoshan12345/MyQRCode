@@ -5,11 +5,11 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeLib", "QRCodeLib\QRCodeLib.csproj", "{E98126B2-AF17-4783-96B9-856D6744DCA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeSampleApp", "QRCodeSampleApp\QRCodeSampleApp.csproj", "{41E1CFDE-BFA0-4274-9267-B129B46BC312}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeSample", "QRCodeSampleApp\QRCodeSample.csproj", "{41E1CFDE-BFA0-4274-9267-B129B46BC312}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZXing", "ZXing\ZXing.csproj", "{6431CF13-7A7B-4602-B96A-47CDA6F0B008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encrypt", "Encrypt\Encrypt.csproj", "{053C325C-8F48-459F-9B6B-0B2963BFC25B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption", "Encrypt\Encryption.csproj", "{053C325C-8F48-459F-9B6B-0B2963BFC25B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

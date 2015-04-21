@@ -139,6 +139,7 @@
     <Compile Include="geom\Line.cs" />
     <Compile Include="geom\Point.cs" />
     <Compile Include="geom\SamplingGrid.cs" />
+    <Compile Include="Operate.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -415,6 +416,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Encrypt\Encryption.csproj">
+      <Project>{053c325c-8f48-459f-9b6b-0b2963bfc25b}</Project>
+      <Name>Encryption</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

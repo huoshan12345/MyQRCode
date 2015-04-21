@@ -1,4 +1,4 @@
-﻿namespace RSA
+﻿namespace Encryption.RSA
 {
     partial class RSAForm
     {

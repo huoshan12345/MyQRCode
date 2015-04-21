@@ -32,18 +32,18 @@
 
 
 #region Using Directives
+
 using System;
-using System.Diagnostics;
-using System.Security.Cryptography;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
+
 #endregion
 
-namespace CommonLibrary.Cryptography
+namespace Encryption
 {
     /// <summary>
     /// The crytography helper.

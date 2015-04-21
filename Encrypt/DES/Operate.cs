@@ -1,15 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DES
+namespace Encryption.DES
 {
     public class Operate
     {
         private static readonly byte[] iv = { 59, 76, 55, 186, 78, 4, 217, 32 };
 
+        /// <summary>
+        /// DES加密方法
+        /// </summary>
+        /// <param name="Source">明文</param>
+        /// <param name="Key">密钥</param>
+        /// <returns></returns>
         public static string Encrypt(string Source, string Key)
         {
             Source = Source.Trim();
@@ -36,6 +41,12 @@ namespace DES
             return Convert.ToBase64String(ms.ToArray());
         }
 
+        /// <summary>
+        /// DES解密方法
+        /// </summary>
+        /// <param name="Source">密文</param>
+        /// <param name="Key">密钥</param>
+        /// <returns>明文</returns>
         public static string Decrypt(string Source, string Key)
         {
             if (String.IsNullOrEmpty(Source))
