@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Encryption.DES
 {
-    public partial class DESForm : Form
+    internal partial class DESForm : Form
     {
         public DESForm()
         {

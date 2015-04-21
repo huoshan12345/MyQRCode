@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Encryption.IDEA
 {
-    public partial class IdeaForm : Form
+    internal partial class IdeaForm : Form
     {
         public IdeaForm()
         {

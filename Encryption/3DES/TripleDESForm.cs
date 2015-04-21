@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Encryption._3DES
 {
-    public partial class TripleDESForm : Form
+    internal partial class TripleDESForm : Form
     {   
         public TripleDESForm()
         {

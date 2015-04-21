@@ -6,12 +6,12 @@ using System.Text;
 
 namespace Encryption.RSA
 {
-    internal class DESManager
+    class DESManager
     {
         private static readonly byte[] iv = { 59, 76, 55, 186, 78, 4, 217, 32 };
         private static readonly byte[] key = { 155, 101, 246, 179, 46, 96, 56, 39 };
         //DES加密
-        public static string DesEncrypt(string Source)
+        internal static string DesEncrypt(string Source)
         {
             byte[] bytIn = System.Text.Encoding.Default.GetBytes(Source);
             DESCryptoServiceProvider mobjCryptoService = new DESCryptoServiceProvider();
@@ -26,7 +26,7 @@ namespace Encryption.RSA
         }
 
         //DES解密
-        public static string DesDecrypt(string Source)
+        internal static string DesDecrypt(string Source)
         {
             byte[] bytIn = Convert.FromBase64String(Source);
             DESCryptoServiceProvider mobjCryptoService = new DESCryptoServiceProvider();
@@ -41,19 +41,19 @@ namespace Encryption.RSA
     }
 
     //下面开始RSA处理-方法：
-    internal class RSAGenerator
+    class RSAGenerator
     {
         private RSACryptoServiceProvider RSACSP;
         //构造函数
-        public RSAGenerator()
+        internal RSAGenerator()
         {
             RSACSP = new RSACryptoServiceProvider();
         }
-        public RSAGenerator(CspParameters parameters)
+        internal RSAGenerator(CspParameters parameters)
         {
             RSACSP = new RSACryptoServiceProvider(parameters);
         }
-        public RSAGenerator(int dwKeySize, CspParameters parameters)
+        internal RSAGenerator(int dwKeySize, CspParameters parameters)
         {
             RSACSP = new RSACryptoServiceProvider(dwKeySize, parameters);
         }
@@ -73,13 +73,13 @@ namespace Encryption.RSA
             return DESManager.DesEncrypt(privateKey);
         }
 
-        public byte[] EncryptToByte(string Source, string PublicKey)
+        internal byte[] EncryptToByte(string Source, string PublicKey)
         {
             RSACSP.FromXmlString(DESManager.DesDecrypt(PublicKey));
             return RSACSP.Encrypt(Encoding.UTF8.GetBytes(Source), false);
         }
 
-        public string Encrypt(string Source, string PublicKey)
+        internal string Encrypt(string Source, string PublicKey)
         {
             RSACSP.FromXmlString(DESManager.DesDecrypt(PublicKey));
             byte[] tempByte = EncryptToByte(Source, PublicKey);
@@ -91,13 +91,7 @@ namespace Encryption.RSA
             return sb.ToString();
         }
 
-        /// <summary>
-        /// 根据公钥加密字符串
-        /// </summary>
-        /// <param name="originalString">要加密的字符串</param>
-        /// <param name="publicKey">公钥</param>
-        /// <returns></returns>
-        public string EncryptToBase64String(string Source, string PublicKey)
+        internal string EncryptToBase64String(string Source, string PublicKey)
         {
             RSACSP.FromXmlString(DESManager.DesDecrypt(PublicKey));
             byte[] tempByte = EncryptToByte(Source, PublicKey);
@@ -105,7 +99,7 @@ namespace Encryption.RSA
             return result;
         }
 
-        public string Decrypt(string Source, string PrivateKey)
+        internal string Decrypt(string Source, string PrivateKey)
         {
             int ByteNum = Source.Length / 3;
             byte[] tempByte = new byte[ByteNum];
@@ -126,13 +120,7 @@ namespace Encryption.RSA
             return result;
         }
 
-        /// <summary>
-        /// 根据私钥解密
-        /// </summary>
-        /// <param name="encriptedString">要解密的字符串</param>
-        /// <param name="privateKey">私钥</param>
-        /// <returns></returns>
-        public string DecryptFromBase64String(string Source, string PrivateKey)
+        internal string DecryptFromBase64String(string Source, string PrivateKey)
         {
             byte[] tempByte = System.Convert.FromBase64String(Source);
             RSACSP.FromXmlString(DESManager.DesDecrypt(PrivateKey));

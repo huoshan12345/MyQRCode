@@ -32,6 +32,11 @@ namespace ThoughtWorks.QRCode
                 return image;
             }
 
+            /// <summary>
+            /// 将字符串编码为QRCode图片
+            /// </summary>
+            /// <param name="Source">明文</param>
+            /// <returns>二维码图片</returns>
             public static Image Encode(string Source)
             {
                 QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
@@ -43,6 +48,11 @@ namespace ThoughtWorks.QRCode
                 return image;
             }
 
+            /// <summary>
+            /// 将QRCode图片解码为字符串
+            /// </summary>
+            /// <param name="image">二维码图片</param>
+            /// <returns>明文</returns>
             public static string Decode(Image image)
             {
                 QRCodeDecoder decoder = new QRCodeDecoder();

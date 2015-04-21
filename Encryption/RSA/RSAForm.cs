@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace Encryption.RSA
 {
-    public partial class RSAForm : Form
+    internal partial class RSAForm : Form
     {
         CspParameters cspPas = new CspParameters();
 
-        public RSAForm()
+        internal RSAForm()
         {
             InitializeComponent();
             cspPas.KeyContainerName = "MyRSA";

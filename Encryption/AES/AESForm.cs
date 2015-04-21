@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Encryption.AES
 {
-    public partial class AESForm : Form
+    internal partial class AESForm : Form
     {
 
         public AESForm()
