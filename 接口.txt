@@ -1,0 +1,56 @@
+Encryption.dll
+
+命名空间：Encryption.DES
+
+        /// <summary>
+        /// DES加密方法
+        /// </summary>
+        /// <param name="Source">明文</param>
+        /// <param name="Key">密钥</param>
+        /// <returns></returns>
+        public static string Encrypt(string Source, string Key);		
+		
+        /// <summary>
+        /// DES解密方法
+        /// </summary>
+        /// <param name="Source">密文</param>
+        /// <param name="Key">密钥</param>
+        /// <returns>明文</returns>
+        public static string Decrypt(string Source, string Key);	
+
+命名空间：Encryption.RSA
+
+        /// <summary>
+        /// RSA加密方法
+        /// </summary>
+        /// <param name="Source">待加密文本</param>
+        /// <returns>返回一个长度为3的数组：｛密文，公钥，私钥｝</returns>
+        public static string[] Encrypt(string Source);
+
+        /// <summary>
+        /// RSA解密方法
+        /// </summary>
+        /// <param name="Source">密文</param>
+        /// <param name="PrivateKey">私钥</param>
+        /// <returns>明文</returns>
+        public static string Decrypt(string Source, string PrivateKey);		
+
+
+
+ThoughtWorks.QRCode.dll
+
+命名空间：ThoughtWorks.QRCode
+
+		/// <summary>
+		/// 将字符串编码为QRCode图片
+		/// </summary>
+		/// <param name="Source">明文</param>
+		/// <returns>二维码图片</returns>
+		public static Image Encode(string Source);
+		
+		/// <summary>
+		/// 将QRCode图片解码为字符串
+		/// </summary>
+		/// <param name="image">二维码图片</param>
+		/// <returns>明文</returns>
+		public static string Decode(Image image);

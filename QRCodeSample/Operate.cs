@@ -1,7 +1,4 @@
 ﻿using System.Drawing;
-using ThoughtWorks.QRCode.Codec;
-using ThoughtWorks.QRCode.Codec.Data;
-using ThoughtWorks.QRCode.Codec.Util;
 using System.Text;
 using System;
 using System.Globalization;
@@ -10,6 +7,10 @@ using System.IO;
 using System.IO.Compression;
 using System.Security.Cryptography;
 using Encryption;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
+using ZXing.Rendering;
 
 namespace QRCodeSample
 {
@@ -415,14 +416,14 @@ namespace QRCodeSample
 
             public static bool Compare(string[] sources, string[] targets)
             {
-                foreach(string source in sources)
+                foreach (string source in sources)
                 {
-                    foreach(string target in targets)
+                    foreach (string target in targets)
                     {
                         if (Compare(source, target) == true)
                         {
                             return true;
-                        }                            
+                        }
                     }
                 }
                 return false;
@@ -434,52 +435,57 @@ namespace QRCodeSample
             public struct QRCodeInput
             {
                 public string Source;
-                public int QRCodeScale;
-                public int QRCodeVersion;
-                public QRCodeEncoder.ENCODE_MODE QRCodeEncodeMode;
-                public QRCodeEncoder.ERROR_CORRECTION QRCodeErrorCorrect;
+                public int Height;
+                public int Width;
             };
 
             public static Image Encode(QRCodeInput qrCodeInput)
             {
-                QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
-                qrCodeEncoder.QRCodeEncodeMode = qrCodeInput.QRCodeEncodeMode;
-                qrCodeEncoder.QRCodeScale = qrCodeInput.QRCodeScale;
-                qrCodeEncoder.QRCodeVersion = qrCodeInput.QRCodeVersion;
-                qrCodeEncoder.QRCodeErrorCorrect = qrCodeInput.QRCodeErrorCorrect;
-                Image image = qrCodeEncoder.Encode(qrCodeInput.Source);
-                return image;
+                var writer = new BarcodeWriter
+                {
+                    Format = BarcodeFormat.QR_CODE,
+                    Options = new QrCodeEncodingOptions
+                    {
+                        DisableECI = true,
+                        CharacterSet = "UTF-8",
+                        Height = qrCodeInput.Height,
+                        Width = qrCodeInput.Width,
+                    },
+                };
+                return writer.Write(qrCodeInput.Source);
             }
 
-            public static Image Encode(string Source)
+            public static Image Encode(string source)
             {
-                QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
-                qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
-                qrCodeEncoder.QRCodeScale = 4;
-                qrCodeEncoder.QRCodeVersion = 0;
-                qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
-                Image image = qrCodeEncoder.Encode(Source);
-                return image;
+                return Encode(new QRCodeInput { Width = 400, Height = 400, Source = source });
             }
 
             public static string Decode(Image image)
             {
-                QRCodeDecoder decoder = new QRCodeDecoder();
-                Bitmap BM = new Bitmap(image);
-                string result = decoder.decode(new QRCodeBitmapImage(new Bitmap(image)));
-                BM.Dispose();
-                return result;
+                var reader = new BarcodeReader
+                {
+                    AutoRotate = true,
+                    TryInverted = true,
+                    Options = new DecodingOptions
+                    {
+                        PossibleFormats = new List<BarcodeFormat> { BarcodeFormat.QR_CODE },
+                        TryHarder = true,
+                    }
+                };
+                using (Bitmap bitmap = new Bitmap(image))
+                {
+                    string result = reader.Decode(bitmap).Text;
+                    return result;
+                }
+
             }
 
-            public static string Decode(string FileName)
+            public static string Decode(string fileName)
             {
-                Image image = new Bitmap(FileName);
-                QRCodeDecoder decoder = new QRCodeDecoder();
-                Bitmap BM = new Bitmap(image);
-                string result = decoder.decode(new QRCodeBitmapImage(new Bitmap(image)));
-                BM.Dispose();
-                image.Dispose();
-                return result;
+                using (Image image = Image.FromFile(fileName))
+                {
+                    return Decode(image);
+                }
             }
         }
 
@@ -509,58 +515,6 @@ namespace QRCodeSample
             public static string File2String(string fileName)
             {
                 return Encoding.UTF8.GetString(File2Byte(fileName));
-            }
-        }
-
-        public static class EncryptionHelper
-        {
-            public static class DES
-            {
-                /// <summary>
-                /// DES加密方法
-                /// </summary>
-                /// <param name="Source">明文</param>
-                /// <param name="Key">密钥</param>
-                /// <returns></returns>
-                public static string Encrypt(string Source, string Key)
-                {
-                    return Encryption.DES.Operate.Encrypt(Source,Key);
-                }
-
-                /// <summary>
-                /// DES解密方法
-                /// </summary>
-                /// <param name="Source">密文</param>
-                /// <param name="Key">密钥</param>
-                /// <returns>明文</returns>
-                public static string Decrypt(string Source, string Key)
-                {
-                    return Encryption.DES.Operate.Decrypt(Source, Key);
-                }
-            }
-
-            public static class RSA
-            {
-                /// <summary>
-                /// RSA加密方法
-                /// </summary>
-                /// <param name="Source">待加密文本</param>
-                /// <returns>返回一个长度为3的数组：｛密文，公钥，私钥｝</returns>
-                public static string[] Encrypt(string Source)
-                {
-                    return Encryption.RSA.Operate.Encrypt(Source);
-                }
-
-                /// <summary>
-                /// RSA解密方法
-                /// </summary>
-                /// <param name="Source">密文</param>
-                /// <param name="PrivateKey">私钥</param>
-                /// <returns>明文</returns>
-                public static string Decrypt(string Source, string PrivateKey)
-                {
-                    return Encryption.RSA.Operate.Decrypt(Source, PrivateKey);
-                }
             }
         }
     }
