@@ -446,6 +446,7 @@ namespace QRCodeSample
                     Format = BarcodeFormat.QR_CODE,
                     Options = new QrCodeEncodingOptions
                     {
+                        Margin = 1,
                         DisableECI = true,
                         CharacterSet = "UTF-8",
                         Height = qrCodeInput.Height,
