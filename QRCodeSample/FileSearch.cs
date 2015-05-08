@@ -192,7 +192,7 @@ namespace WinSearchFile
             try
             {
                 string fileName = resultList[index].ToString();
-                string source = Operate.QRcodeHelper.Decode(fileName);
+                string source = QRcodeHelper.Decode(fileName);
                 string target = searchInput.SearchForText;
                 string[] sourceSubStr = source.Split(new string[] { "##" }, StringSplitOptions.RemoveEmptyEntries);
                 string[] targetSubStr = target.Split(new string[] { "##" }, StringSplitOptions.RemoveEmptyEntries);
@@ -267,7 +267,7 @@ namespace WinSearchFile
                     }
                     try
                     {
-                        string source = Operate.QRcodeHelper.Decode(fileName);                        
+                        string source = QRcodeHelper.Decode(fileName);                        
                         string[] sourceSubStr = source.Split(new string[] { "##", ",", "/r", "/n", " " }, 
                             StringSplitOptions.RemoveEmptyEntries);
                         

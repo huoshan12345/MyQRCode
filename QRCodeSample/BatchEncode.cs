@@ -260,7 +260,7 @@ namespace QRCodeSample
                     }
                     try
                     {
-                        Image image = Operate.QRcodeHelper.Encode(source);
+                        Image image = QRcodeHelper.Encode(source);
                         string imageName = "QRcode_" + (index + 1).ToString() + ".png";
                         string imagePath = this.createDirectory + "\\" + imageName;
                         FileStream fs = new FileStream(imagePath, FileMode.OpenOrCreate, FileAccess.Write);
@@ -342,7 +342,7 @@ namespace QRCodeSample
                             {
                                 try
                                 {                                    
-                                    Image image = Operate.QRcodeHelper.Encode(source);
+                                    Image image = QRcodeHelper.Encode(source);
                                     string imageName = "QRcode_" + fileNum.ToString() + ".jpg";
                                     FileStream fs = new FileStream(this.createDirectory + "\\" + imageName, FileMode.OpenOrCreate, FileAccess.Write);
                                     image.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
