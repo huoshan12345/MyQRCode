@@ -29,12 +29,12 @@ namespace Encryption.DES
                 throw new Exception("密钥个数必须为8个字符或4个汉字！");
             }
 
-            byte[] bytIn = System.Text.Encoding.Default.GetBytes(Source);
+            byte[] bytIn = Encoding.Default.GetBytes(Source);
             DESCryptoServiceProvider mobjCryptoService = new DESCryptoServiceProvider();
             mobjCryptoService.Key = key;
-            mobjCryptoService.IV = DES.Operate.iv;
+            mobjCryptoService.IV = iv;
             ICryptoTransform encrypto = mobjCryptoService.CreateEncryptor();
-            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            MemoryStream ms = new MemoryStream();
             CryptoStream cs = new CryptoStream(ms, encrypto, CryptoStreamMode.Write);
             cs.Write(bytIn, 0, bytIn.Length);
             cs.FlushFinalBlock();
@@ -63,8 +63,8 @@ namespace Encryption.DES
             byte[] bytIn = Convert.FromBase64String(Source);
             DESCryptoServiceProvider mobjCryptoService = new DESCryptoServiceProvider();
             mobjCryptoService.Key = key;
-            mobjCryptoService.IV = DES.Operate.iv;
-            System.IO.MemoryStream ms = new System.IO.MemoryStream(bytIn, 0, bytIn.Length);
+            mobjCryptoService.IV = iv;
+            MemoryStream ms = new MemoryStream(bytIn, 0, bytIn.Length);
             ICryptoTransform encrypto = mobjCryptoService.CreateDecryptor();
             CryptoStream cs = new CryptoStream(ms, encrypto, CryptoStreamMode.Read);
             StreamReader strd = new StreamReader(cs, Encoding.Default);
