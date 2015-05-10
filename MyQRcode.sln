@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeSample", "QRCodeSampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption", "Encryption\Encryption.csproj", "{053C325C-8F48-459F-9B6B-0B2963BFC25B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSearcher", "FileSearcher\FileSearcher.csproj", "{CFB60CF9-E95D-4C0E-A32F-C0DBD7EB7462}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncodeUtil", "EncodeUtil\EncodeUtil.csproj", "{CFB60CF9-E95D-4C0E-A32F-C0DBD7EB7462}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

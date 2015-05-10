@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.Win32.SafeHandles;
 
-namespace FileSearcher
+namespace EncodeUtil
 {
     /// <summary>
     /// Contains information about a file returned by the 

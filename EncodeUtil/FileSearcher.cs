@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Threading.Tasks;
 
-namespace FileSearcher
+namespace EncodeUtil
 {
     public class FileSearcher
     {

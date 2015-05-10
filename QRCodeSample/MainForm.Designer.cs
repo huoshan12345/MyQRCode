@@ -29,13 +29,13 @@ namespace QRCodeSample
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
+            this.skinEngine = new Sunisoft.IrisSkin.SkinEngine();
             this.tabMain = new QRCodeSample.NewTabControl();
             this.tabEncode = new System.Windows.Forms.TabPage();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -108,8 +108,8 @@ namespace QRCodeSample
             this.label18 = new System.Windows.Forms.Label();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.btnOpen3 = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabEncode.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -127,12 +127,12 @@ namespace QRCodeSample
             this.tabBatchEncode.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
+            resources.ApplyResources(this.menuStrip, "menuStrip");
+            this.menuStrip.Name = "menuStrip";
             // 
             // fileToolStripMenuItem
             // 
@@ -147,13 +147,13 @@ namespace QRCodeSample
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // statusStrip1
+            // statusStrip
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
-            this.statusStrip1.Name = "statusStrip1";
+            resources.ApplyResources(this.statusStrip, "statusStrip");
+            this.statusStrip.Name = "statusStrip";
             // 
             // toolStripStatusLabel1
             // 
@@ -165,14 +165,14 @@ namespace QRCodeSample
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
             // 
-            // skinEngine1
+            // skinEngine
             // 
-            this.skinEngine1.@__DrawButtonFocusRectangle = true;
-            this.skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
-            this.skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
-            this.skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.skinEngine1.SerialNumber = "";
-            this.skinEngine1.SkinFile = null;
+            this.skinEngine.@__DrawButtonFocusRectangle = true;
+            this.skinEngine.DisabledButtonTextColor = System.Drawing.Color.Gray;
+            this.skinEngine.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            this.skinEngine.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.skinEngine.SerialNumber = "";
+            this.skinEngine.SkinFile = null;
             // 
             // tabMain
             // 
@@ -761,15 +761,15 @@ namespace QRCodeSample
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.tabMain);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip);
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.frmSample_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.tabMain.ResumeLayout(false);
             this.tabEncode.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -817,14 +817,14 @@ namespace QRCodeSample
         private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btnDecode;
         private System.Windows.Forms.TextBox txtDecodedData;
         private System.Windows.Forms.PictureBox picDecode;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -877,7 +877,7 @@ namespace QRCodeSample
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.TextBox txtComManager;
         private System.Windows.Forms.Label label19;
-        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
+        private Sunisoft.IrisSkin.SkinEngine skinEngine;
         public System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.TextBox txtSearch;
     }
