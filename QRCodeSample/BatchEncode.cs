@@ -116,7 +116,7 @@ namespace QRCodeSample
                             ListViewItem tempViewItem = new ListViewItem(resultNum.ToString());
                             tempViewItem.SubItems.Add(strLine);
                             tempViewItem.SubItems.Add("未生成");
-                            mainForm.listFileReaded.Items.Add(tempViewItem);
+                            mainForm.lvBatchEncode.Items.Add(tempViewItem);
                         }));
                     }
 
@@ -200,14 +200,14 @@ namespace QRCodeSample
 
                 mainForm.Invoke(new MethodInvoker(() =>
                 {
-                    mainForm.listFileReaded.Items[index].SubItems[2].Text = "已生成";
+                    mainForm.lvBatchEncode.Items[index].SubItems[2].Text = "已生成";
                 }));
             }
             catch
             {
                 mainForm.Invoke(new MethodInvoker(() =>
                 {
-                    mainForm.listFileReaded.Items[index].SubItems[2].Text = "失败";
+                    mainForm.lvBatchEncode.Items[index].SubItems[2].Text = "失败";
                 }));
             }
         }
@@ -268,14 +268,14 @@ namespace QRCodeSample
                         fs.Close();
                         mainForm.Invoke(new MethodInvoker(() =>
                         {
-                            mainForm.listFileReaded.Items[index].SubItems[2].Text = "已生成";
+                            mainForm.lvBatchEncode.Items[index].SubItems[2].Text = "已生成";
                         }));
                     }
                     catch
                     {
                         mainForm.Invoke(new MethodInvoker(() =>
                         {
-                            mainForm.listFileReaded.Items[index].SubItems[2].Text = "失败";
+                            mainForm.lvBatchEncode.Items[index].SubItems[2].Text = "失败";
                         }));
                     }
                     finally
@@ -374,7 +374,7 @@ namespace QRCodeSample
                         {
                             mainForm.Invoke(new MethodInvoker(() =>
                             {
-                                mainForm.listFileReaded.Items[j + index].SubItems[2].Text = strResult[j];
+                                mainForm.lvBatchEncode.Items[j + index].SubItems[2].Text = strResult[j];
                             }));
                         }
                     }

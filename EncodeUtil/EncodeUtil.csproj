@@ -43,6 +43,7 @@
     <Compile Include="BatchEncoder.cs" />
     <Compile Include="FastDirectoryEnumerator.cs" />
     <Compile Include="FileSearcher.cs" />
+    <Compile Include="Interface.cs" />
     <Compile Include="Operate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

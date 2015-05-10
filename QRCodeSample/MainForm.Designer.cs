@@ -92,7 +92,7 @@ namespace QRCodeSample
             this.label12 = new System.Windows.Forms.Label();
             this.txtSelectPath = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.listFileFounded = new QRCodeSample.DoubleBufferListView();
+            this.lvFileSearch = new QRCodeSample.DoubleBufferListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -101,7 +101,7 @@ namespace QRCodeSample
             this.btnOpen2 = new System.Windows.Forms.Button();
             this.tabBatchEncode = new System.Windows.Forms.TabPage();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.listFileReaded = new QRCodeSample.DoubleBufferListView();
+            this.lvBatchEncode = new QRCodeSample.DoubleBufferListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -586,7 +586,7 @@ namespace QRCodeSample
             this.tabSearch.Controls.Add(this.label12);
             this.tabSearch.Controls.Add(this.txtSelectPath);
             this.tabSearch.Controls.Add(this.btnSearch);
-            this.tabSearch.Controls.Add(this.listFileFounded);
+            this.tabSearch.Controls.Add(this.lvFileSearch);
             this.tabSearch.Controls.Add(this.label11);
             this.tabSearch.Controls.Add(this.txtQRCodePath);
             this.tabSearch.Controls.Add(this.btnOpen2);
@@ -647,22 +647,22 @@ namespace QRCodeSample
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // listFileFounded
+            // lvFileSearch
             // 
-            this.listFileFounded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listFileFounded.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvFileSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvFileSearch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listFileFounded.FullRowSelect = true;
-            this.listFileFounded.GridLines = true;
-            resources.ApplyResources(this.listFileFounded, "listFileFounded");
-            this.listFileFounded.MultiSelect = false;
-            this.listFileFounded.Name = "listFileFounded";
-            this.listFileFounded.UseCompatibleStateImageBehavior = false;
-            this.listFileFounded.View = System.Windows.Forms.View.Details;
-            this.listFileFounded.SelectedIndexChanged += new System.EventHandler(this.listFileFounded_SelectedIndexChanged);
-            this.listFileFounded.DoubleClick += new System.EventHandler(this.listFileFounded_DoubleClick);
+            this.lvFileSearch.FullRowSelect = true;
+            this.lvFileSearch.GridLines = true;
+            resources.ApplyResources(this.lvFileSearch, "lvFileSearch");
+            this.lvFileSearch.MultiSelect = false;
+            this.lvFileSearch.Name = "lvFileSearch";
+            this.lvFileSearch.UseCompatibleStateImageBehavior = false;
+            this.lvFileSearch.View = System.Windows.Forms.View.Details;
+            this.lvFileSearch.SelectedIndexChanged += new System.EventHandler(this.listFileFounded_SelectedIndexChanged);
+            this.lvFileSearch.DoubleClick += new System.EventHandler(this.listFileFounded_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -697,7 +697,7 @@ namespace QRCodeSample
             // tabBatchEncode
             // 
             this.tabBatchEncode.Controls.Add(this.btnCreate);
-            this.tabBatchEncode.Controls.Add(this.listFileReaded);
+            this.tabBatchEncode.Controls.Add(this.lvBatchEncode);
             this.tabBatchEncode.Controls.Add(this.label18);
             this.tabBatchEncode.Controls.Add(this.txtFilePath);
             this.tabBatchEncode.Controls.Add(this.btnOpen3);
@@ -712,20 +712,20 @@ namespace QRCodeSample
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // listFileReaded
+            // lvBatchEncode
             // 
-            this.listFileReaded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listFileReaded.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvBatchEncode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvBatchEncode.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.listFileReaded.FullRowSelect = true;
-            this.listFileReaded.GridLines = true;
-            resources.ApplyResources(this.listFileReaded, "listFileReaded");
-            this.listFileReaded.MultiSelect = false;
-            this.listFileReaded.Name = "listFileReaded";
-            this.listFileReaded.UseCompatibleStateImageBehavior = false;
-            this.listFileReaded.View = System.Windows.Forms.View.Details;
+            this.lvBatchEncode.FullRowSelect = true;
+            this.lvBatchEncode.GridLines = true;
+            resources.ApplyResources(this.lvBatchEncode, "lvBatchEncode");
+            this.lvBatchEncode.MultiSelect = false;
+            this.lvBatchEncode.Name = "lvBatchEncode";
+            this.lvBatchEncode.UseCompatibleStateImageBehavior = false;
+            this.lvBatchEncode.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader6
             // 
@@ -850,7 +850,7 @@ namespace QRCodeSample
         private System.Windows.Forms.Button btnOpen2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtQRCodePath;
-        public DoubleBufferListView listFileFounded;
+        public DoubleBufferListView lvFileSearch;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         public System.Windows.Forms.Button btnSearch;
@@ -871,7 +871,7 @@ namespace QRCodeSample
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Button btnOpen3;
         public System.Windows.Forms.Button btnCreate;
-        public DoubleBufferListView listFileReaded;
+        public DoubleBufferListView lvBatchEncode;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;

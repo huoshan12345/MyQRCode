@@ -110,6 +110,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EncodeUtil\EncodeUtil.csproj">
+      <Project>{cfb60cf9-e95d-4c0e-a32f-c0dbd7eb7462}</Project>
+      <Name>EncodeUtil</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Encryption\Encryption.csproj">
       <Project>{053c325c-8f48-459f-9b6b-0b2963bfc25b}</Project>
       <Name>Encryption</Name>

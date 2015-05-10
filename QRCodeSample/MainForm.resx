@@ -1815,25 +1815,25 @@
   <data name="columnHeader3.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="listFileFounded.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lvFileSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 131</value>
   </data>
-  <data name="listFileFounded.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lvFileSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>616, 267</value>
   </data>
-  <data name="listFileFounded.TabIndex" type="System.Int32, mscorlib">
+  <data name="lvFileSearch.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;listFileFounded.Name" xml:space="preserve">
-    <value>listFileFounded</value>
+  <data name="&gt;&gt;lvFileSearch.Name" xml:space="preserve">
+    <value>lvFileSearch</value>
   </data>
-  <data name="&gt;&gt;listFileFounded.Type" xml:space="preserve">
+  <data name="&gt;&gt;lvFileSearch.Type" xml:space="preserve">
     <value>QRCodeSample.DoubleBufferListView, QRCodeSample, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;listFileFounded.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lvFileSearch.Parent" xml:space="preserve">
     <value>tabSearch</value>
   </data>
-  <data name="&gt;&gt;listFileFounded.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lvFileSearch.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
@@ -1989,25 +1989,25 @@
   <data name="columnHeader8.Width" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="listFileReaded.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lvBatchEncode.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 68</value>
   </data>
-  <data name="listFileReaded.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lvBatchEncode.Size" type="System.Drawing.Size, System.Drawing">
     <value>616, 266</value>
   </data>
-  <data name="listFileReaded.TabIndex" type="System.Int32, mscorlib">
+  <data name="lvBatchEncode.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="&gt;&gt;listFileReaded.Name" xml:space="preserve">
-    <value>listFileReaded</value>
+  <data name="&gt;&gt;lvBatchEncode.Name" xml:space="preserve">
+    <value>lvBatchEncode</value>
   </data>
-  <data name="&gt;&gt;listFileReaded.Type" xml:space="preserve">
+  <data name="&gt;&gt;lvBatchEncode.Type" xml:space="preserve">
     <value>QRCodeSample.DoubleBufferListView, QRCodeSample, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;listFileReaded.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lvBatchEncode.Parent" xml:space="preserve">
     <value>tabBatchEncode</value>
   </data>
-  <data name="&gt;&gt;listFileReaded.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lvBatchEncode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">

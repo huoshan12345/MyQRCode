@@ -197,7 +197,7 @@ namespace EncodeUtil
         {
             using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
-                using (StreamReader sr = new StreamReader(fs))
+                using (StreamReader sr = new StreamReader(fs, encoding))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)

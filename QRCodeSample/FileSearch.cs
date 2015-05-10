@@ -109,7 +109,7 @@ namespace WinSearchFile
                         tempViewItem.SubItems.Add("未比对");
                         mainForm.Invoke(new MethodInvoker(() =>
                         {
-                            mainForm.listFileFounded.Items.Add(tempViewItem);
+                            mainForm.lvFileSearch.Items.Add(tempViewItem);
                         }));
                         searchFileFinish.Set();
                     }
@@ -207,14 +207,14 @@ namespace WinSearchFile
                 {
                     mainForm.Invoke(new MethodInvoker(() =>
                     {
-                        mainForm.listFileFounded.Items[index].SubItems[2].Text = "符合";
+                        mainForm.lvFileSearch.Items[index].SubItems[2].Text = "符合";
                     }));
                 }
                 else
                 {
                     mainForm.Invoke(new MethodInvoker(() =>
                     {
-                        mainForm.listFileFounded.Items[index].SubItems[2].Text = "不符合";
+                        mainForm.lvFileSearch.Items[index].SubItems[2].Text = "不符合";
                     }));
                 }
             }
@@ -222,7 +222,7 @@ namespace WinSearchFile
             {
                 mainForm.Invoke(new MethodInvoker(() =>
                 {
-                    mainForm.listFileFounded.Items[index].SubItems[2].Text = "失败";
+                    mainForm.lvFileSearch.Items[index].SubItems[2].Text = "失败";
                 }));
             }
         }
@@ -284,14 +284,14 @@ namespace WinSearchFile
                         {
                             mainForm.Invoke(new MethodInvoker(() =>
                             {
-                                mainForm.listFileFounded.Items[index].SubItems[2].Text = "符合";
+                                mainForm.lvFileSearch.Items[index].SubItems[2].Text = "符合";
                             }));
                         }
                         else
                         {
                             mainForm.Invoke(new MethodInvoker(() =>
                             {
-                                mainForm.listFileFounded.Items[index].SubItems[2].Text = "不符合";
+                                mainForm.lvFileSearch.Items[index].SubItems[2].Text = "不符合";
                             }));
                         }
                     }
@@ -299,7 +299,7 @@ namespace WinSearchFile
                     {
                         mainForm.Invoke(new MethodInvoker(() =>
                         {
-                            mainForm.listFileFounded.Items[index].SubItems[2].Text = "失败";
+                            mainForm.lvFileSearch.Items[index].SubItems[2].Text = "失败";
                         }));
                     }
                     finally
