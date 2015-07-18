@@ -20,3 +20,11 @@ MyQRCode
 信息的管理，该系统对组织机构的多项信息进行格式化，实现了快速的批量生成、搜索功能，为海量信息的管理提供了接口。
 
 ###### 关键字：自动识别，二维码，加密，文本压缩，多串匹配
+
+#### Develop
+
+Visual Studio Express 2013 is recommended.
+
+#### License
+
+MIT
